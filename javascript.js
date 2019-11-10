@@ -44,7 +44,7 @@ function createWeatherCard(city) {
             '<div class="card-body">' +
             '<div class="icon"><img src="' + iconURL + '"></div>' +
             '<div class="degrees">' + temp + " &deg;F" + '</div>' +
-            '<h5 class="card-title" class="city-name">' + city + '</h5>' +
+            '<h5 class="card-title city-name">' + city + '</h5>' +
             '<div>' + weatherMain + ": " + weatherDescription + '</div>' +
             '</div>' +
             '</div>';
