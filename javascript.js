@@ -25,7 +25,7 @@ $("#add-city").on("click", function (event) {
     }
 })
 
-createWeatherCard("San Francisco");
+createWeatherCard("Miami");
 createWeatherCard("Paris");
 createWeatherCard("New York");
 
@@ -40,14 +40,37 @@ function createWeatherCard(city) {
         var weatherDescription = response.weather[0].description;
         var temp = Math.round(response.main.temp);
         var iconURL = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
-        var weatherCard = '<div class="card" style="width: 18rem;" class="weather-card">' +
-            '<div class="card-body">' +
-            '<div class="icon"><img src="' + iconURL + '"></div>' +
-            '<div class="degrees">' + temp + " &deg;F" + '</div>' +
-            '<h5 class="card-title" class="city-name">' + city + '</h5>' +
-            '<div>' + weatherMain + ": " + weatherDescription + '</div>' +
-            '</div>' +
-            '</div>';
+        var weatherCard = "<div class='card' style='width: 18rem;' class='weather-card' data-city='" + city + "'>" +
+            "<div class='card-body'>" +
+            "<div class='icon'><img src='" + iconURL + "'></div>" +
+            "<div class='degrees'>" + temp + " &deg;F" + "</div>" +
+            "<h5 class='card-title city-name'>" + city + "</h5>" +
+            "<div>" + weatherMain + ": " + weatherDescription + "</div>" +
+            "</div>" +
+            "</div>";
         $("#top-container").append(weatherCard);
     });
 }
+
+$(document).on("click", ".card", function () {
+    city = $(this).attr("data-city"),
+        queryUrl = "https://api.unsplash.com/search/photos?page=1&query=" + city + "&per_page=15&client_id=1fe059d9563f81ba0606c1b4cc67ce6907170487254d42e8874bf0748145d74b"
+    $.ajax({
+        url: queryUrl,
+        method: "GET",
+    }).then(function (response) {
+        $("#photo-container").empty();
+        var photoArray = response.results;
+        for (var i = 0; i < photoArray.length; i++) {
+            var imageUrl = photoArray[i].urls.small;
+            var attributionUrl = photoArray[i].links.html;
+            var link = $("<a>").attr("href", attributionUrl);
+            var image = $("<img>").attr("src", imageUrl);
+            link.append(image);
+            $("#photo-container").append(link);
+            $("#photo-container").justifiedGallery();
+        }
+    })
+});
+
+
