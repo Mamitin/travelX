@@ -30,7 +30,7 @@ createWeatherCard("Paris");
 createWeatherCard("New York");
 
 function createWeatherCard(city) {
-    queryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=ad0f64f9a42308c19b2ba725fdc6802c"
+    queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=ad0f64f9a42308c19b2ba725fdc6802c"
     $.ajax({
         url: queryUrl,
         method: "GET",
@@ -39,7 +39,7 @@ function createWeatherCard(city) {
         var weatherMain = response.weather[0].main;
         var weatherDescription = response.weather[0].description;
         var temp = Math.round(response.main.temp);
-        var iconURL = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+        var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
         var weatherCard = "<div class='card' style='width: 18rem;' class='weather-card' data-city='" + city + "'>" +
             "<div class='card-body'>" +
             "<div class='icon'><img src='" + iconURL + "'></div>" +
