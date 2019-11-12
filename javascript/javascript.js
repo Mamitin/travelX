@@ -43,7 +43,7 @@ function createWeatherCard(city) {
         var weatherDescription = response.weather[0].description;
         var temp = Math.round(response.main.temp);
         var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
-        var weatherCard = "<div class='card weather-card' style='width: 18rem;' data-city='" + city + "'>" +
+        var weatherCard = "<div class='card weather-card' style='width: 18rem;' data-toggle='tooltip' data-placement='top' title='Click card for more information about the city' data-city='" + city + "'>" +
             "<div class='card-body'>" +
             "<div class='icon'><img src='" + iconURL + "'></div>" +
             "<div class='degrees'>" + temp + " &deg;F" + "</div>" +
@@ -52,6 +52,7 @@ function createWeatherCard(city) {
             "</div>" +
             "</div>";
         $("#top-container").append(weatherCard);
+        $('.weather-card').tooltip();
     });
 }
 
