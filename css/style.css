@@ -1,6 +1,5 @@
-#navBar{
-    top:0;
-    margin-bottom: 20px;
+.navbar{
+    margin-bottom: 40px;
 }
 .link{
     font-family: 'Jomolhari', serif;
@@ -19,9 +18,10 @@
 #wrapper {
     background-color:#827996a2;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .restaurant-image {
@@ -40,7 +40,7 @@
 } */
 
 #photo-container{
-
+    float: left;
 }
 
 body {
@@ -50,3 +50,4 @@ body {
     background-position: center center;
     background-attachment: fixed;
 }
+
