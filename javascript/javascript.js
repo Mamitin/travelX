@@ -28,6 +28,9 @@ $("#add-city").on("click", function (event) {
 createWeatherCard("Miami");
 createWeatherCard("Paris");
 createWeatherCard("New York");
+createWeatherCard("Sydney");
+createWeatherCard("Hong Kong");
+createWeatherCard("Rio de Janeiro");
 
 function createWeatherCard(city) {
     queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=ad0f64f9a42308c19b2ba725fdc6802c";
@@ -59,7 +62,7 @@ $(document).on("click", ".weather-card", function () {
     $("#activities-container").empty();
 
     // Unsplash API 
-    var queryUrl = "https://api.unsplash.com/search/photos?page=1&query=" + city + "&per_page=15&client_id=1fe059d9563f81ba0606c1b4cc67ce6907170487254d42e8874bf0748145d74b";
+    var queryUrl = "https://api.unsplash.com/search/photos?page=1&query=" + city + "&per_page=10&client_id=1fe059d9563f81ba0606c1b4cc67ce6907170487254d42e8874bf0748145d74b";
     $.ajax({
         url: queryUrl,
         method: "GET",
@@ -74,7 +77,7 @@ $(document).on("click", ".weather-card", function () {
             $("#photo-container").append(link);
             $("#photo-container").justifiedGallery({
                 rowHeight: 200,
-                margins: 5
+                margins: 5,
             });
         }
     })

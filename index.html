@@ -1,33 +1,25 @@
 <!DOCTYPE html>
-<html lang="en-us">
-​
+<html lang="en">
 
 <head>
-    ​
-    <meta charset="UTF-8">
-    <title>TravelX</title>
-    ​
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">​
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="justifiedGallery.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
-
+    <link rel="stylesheet" href="css/style.css" />
+    <title>TravelX</title>
 </head>
 
 <body>
-
-            
-                <!-- <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/442/2395499442_a291abee-d4af-4982-a63f-5a86f6c7e1f8.png?cb=1573427590 alt=""> -->
-
-                <form class="form-inline" id="search">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </nav>
-    
+    <!-- <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/442/2395499442_a291abee-d4af-4982-a63f-5a86f6c7e1f8.png?cb=1573427590 alt=""> -->
+    <form class="form-inline" id="search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    </nav>
     <div class="container">
-
         <ul class="nav nav-pills">
             <li class="nav-item">
                 <a class="nav-link" href="#weather">Weather</a>
@@ -40,7 +32,6 @@
             </li>
         </ul>
         <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-
             <div id="wrapper">
                 <div id="top-container">
                     <h4 id="weather"></h4>
@@ -54,9 +45,10 @@
             </div>
         </div>
     </div>
-
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
     <script src="jquery.justifiedGallery.min.js"></script>
     <script src="javascript/javascript.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

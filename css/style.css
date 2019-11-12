@@ -1,3 +1,11 @@
+#navBar{
+    top:0;
+    margin-bottom: 20px;
+}
+.link{
+    font-family: 'Jomolhari', serif;
+    text-align: center;
+}
 .city-name {
     text-transform: capitalize;
 } 
@@ -9,14 +17,11 @@
 }
 
 #wrapper {
-    /* max-width: 5000px; */
-    background-color:#827996;
+    background-color:#827996a2;
     text-align: center;
     border-radius: 20px;
-    /* opacity: 0.5; */
     padding-top: 20px;
     padding-bottom: 20px;
-    
 }
 
 .restaurant-image {
@@ -30,8 +35,12 @@
     float: left;
 }
 
-#nav-bar{
+/* #nav-bar{
     border-radius: 5px;
+} */
+
+#photo-container{
+
 }
 
 body {
