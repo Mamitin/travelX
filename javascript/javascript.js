@@ -16,8 +16,15 @@
 // AJAX call to photo API/ AJAX call for activities API
 // display images with photo display library
 
+
+
 $("#add-city").on("click", function (event) {
     event.preventDefault();
+
+    
+
+
+
     if ($("#city")[0].reportValidity()) {
         var city = $("#city").val().trim();
 
@@ -78,7 +85,9 @@ $(document).on("click", ".weather-card", function () {
             $("#photo-container").append(link);
             $("#photo-container").justifiedGallery({
                 rowHeight: 200,
+                lastRow: "hide",
                 margins: 5,
+                border: 30,
             });
         }
     })

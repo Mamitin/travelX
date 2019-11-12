@@ -1,10 +1,28 @@
-#navBar{
-    top:0;
-    margin-bottom: 20px;
+.navbar{
+    margin-bottom: 40px;
+    
 }
+ul{
+    position: absolute;
+    width: 100%;
+    left: 35%;
+    text-align: center;
+    margin:0 auto;
+}
+
+
+
 .link{
     font-family: 'Jomolhari', serif;
     text-align: center;
+    color: rgb(72, 95, 72);
+    font-size: 1.5em;
+    /* font-weight: bold; */
+    /* position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto; */
 }
 .city-name {
     text-transform: capitalize;
@@ -19,9 +37,10 @@
 #wrapper {
     background-color:#827996a2;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .restaurant-image {
@@ -40,7 +59,7 @@
 } */
 
 #photo-container{
-
+    float: left;
 }
 
 body {
@@ -50,3 +69,4 @@ body {
     background-position: center center;
     background-attachment: fixed;
 }
+
