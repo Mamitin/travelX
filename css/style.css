@@ -2,3 +2,42 @@
     text-transform: capitalize;
 } 
 
+.card {
+    display: inline-block;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+#wrapper {
+    /* max-width: 5000px; */
+    background-color:#827996;
+    text-align: center;
+    border-radius: 20px;
+    /* opacity: 0.5; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+
+.restaurant-image {
+    height: 200px;
+    object-fit: cover;
+    text-overflow: ellipsis;
+}
+
+
+#city-link {
+    float: left;
+}
+
+#nav-bar{
+    border-radius: 5px;
+}
+
+body {
+    background: url("../images/travel_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}

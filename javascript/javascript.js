@@ -73,8 +73,8 @@ $(document).on("click", ".weather-card", function () {
             link.append(image);
             $("#photo-container").append(link);
             $("#photo-container").justifiedGallery({
-                rowHeight: 150,
-                margins: 3
+                rowHeight: 200,
+                margins: 5
             });
         }
     })
