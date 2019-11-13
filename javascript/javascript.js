@@ -1,29 +1,5 @@
-//HTML
-// Search bar with our name KLMS Travel at the top
-// A card with the weather, city and the icon
-// Be able to click on the card 
-// After clicking on the card pictures and events will display
-
-
-
-//JS
-
-// Use firebase authenication
-// event listener for user input link to firebase 
-// Validate search bar
-// Use AJAX call for weather API in a card- look at GIPHY HW
-// on click on card 
-// AJAX call to photo API/ AJAX call for activities API
-// display images with photo display library
-
-
-
 $("#add-city").on("click", function (event) {
     event.preventDefault();
-
-    
-
-
 
     if ($("#city")[0].reportValidity()) {
         var city = $("#city").val().trim();
@@ -109,7 +85,8 @@ $(document).on("click", ".weather-card", function () {
         }
     }).then(function (response) {
         for (var i = 0; i < response.businesses.length; i++) {
-            var business = $("<div>").addClass("card").attr("style", "width: 18rem;")
+            var url = $("<a>").attr("href", response.businesses[i].url).attr("target", "_blank").addClass("restaurant-link");
+            var business = $("<div>").addClass("card").attr("style", "width: 18rem;");
             var name = $("<h5>").addClass("name ellipsis").text(response.businesses[i].name);
             var details = $("<div>")
             var phone = $("<p>").attr("class", "phone").text(response.businesses[i].phone);
@@ -120,7 +97,10 @@ $(document).on("click", ".weather-card", function () {
             details.append(phone);
             details.append(location);
             business.append(details);
-            $("#activities-container").append(business);
+
+            url.append(business);
+
+            $("#activities-container").append(url);
         }
     })
 });
