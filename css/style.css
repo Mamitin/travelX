@@ -1,18 +1,16 @@
-.navbar{
+.navbar {
     margin-bottom: 40px;
-    
 }
-ul{
+
+ul {
     position: absolute;
     width: 100%;
     left: 35%;
     text-align: center;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
-
-
-.link{
+.link {
     font-family: 'Jomolhari', serif;
     text-align: center;
     color: rgb(72, 95, 72);
@@ -24,9 +22,10 @@ ul{
     text-align: center;
     margin:0 auto; */
 }
+
 .city-name {
     text-transform: capitalize;
-} 
+}
 
 .card {
     display: inline-block;
@@ -35,7 +34,7 @@ ul{
 }
 
 #wrapper {
-    background-color:#827996a2;
+    background-color: #827996a2;
     text-align: center;
     border-radius: 10px;
     padding-top: 20px;
@@ -49,7 +48,6 @@ ul{
     text-overflow: ellipsis;
 }
 
-
 #city-link {
     float: left;
 }
@@ -58,7 +56,7 @@ ul{
     border-radius: 5px;
 } */
 
-#photo-container{
+#photo-container {
     float: left;
 }
 
@@ -74,5 +72,21 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: 0px 10px;  
+    margin: 0px 10px;
+}
+
+.restaurant-link:link {
+    color: #000;
+}
+
+.restaurant-link:visited {
+    color: #000;
+}
+
+.restaurant-link:hover {
+    color: #000;
+}
+
+.restaurant-link:active {
+    color: #000;
 }
