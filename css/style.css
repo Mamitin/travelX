@@ -1,26 +1,34 @@
+body {
+    background: url("../images/travel_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    max-width: 100%;
+}
+
 .navbar {
     margin-bottom: 40px;
 }
 
-ul {
-    position: absolute;
-    width: 100%;
-    left: 35%;
-    text-align: center;
-    margin: 0 auto;
-}
 
 .link {
     font-family: 'Jomolhari', serif;
-    text-align: center;
+    text-align: right;
     color: rgb(72, 95, 72);
     font-size: 1.5em;
-    /* font-weight: bold; */
-    /* position: absolute;
-    width: 100%;
-    left: 0;
+}
+
+#search{
+    display:block;
     text-align: center;
-    margin:0 auto; */
+    padding-bottom: 20px;
+}
+
+#add-city{
+    background: #827996;
+    border:#827996;
+    color: #ffff;
 }
 
 .city-name {
@@ -48,25 +56,6 @@ ul {
     text-overflow: ellipsis;
 }
 
-#city-link {
-    float: left;
-}
-
-/* #nav-bar{
-    border-radius: 5px;
-} */
-
-#photo-container {
-    float: left;
-}
-
-body {
-    background: url("../images/travel_background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-}
 
 .ellipsis {
     white-space: nowrap;
