@@ -59,6 +59,16 @@ function createWeatherCard(city) {
             "</div>" +
             "</div>";
         $("#top-container").append(weatherCard);
+        var myObject = {
+            iconCode:iconCode,
+            weatherMain:weatherMain,
+            weatherDescription:weatherDescription,
+            temp:temp,
+            iconURL:iconURL
+
+        };
+        weatherData.push(myObject);
+        
     });
 }
 
@@ -122,5 +132,68 @@ $(document).on("click", ".weather-card", function () {
         }
     })
 });
+
+
+var weatherData = [];
+var photoData = [];
+var resturantsData = [];
+
+
+var firebaseConfig = {
+    apiKey: "AIzaSyCnj1-16_cCbBQxBMm6QEnZmGe5XpbOJ8s",
+    authDomain: "travelx-d1b19.firebaseapp.com",
+    databaseURL: "https://travelx-d1b19.firebaseio.com",
+    projectId: "travelx-d1b19",
+    storageBucket: "travelx-d1b19.appspot.com",
+    messagingSenderId: "119514909713",
+    appId: "1:119514909713:web:934ab8a71f9a7dcbbff5b0",
+    measurementId: "G-2JQ0YCVH1N"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+var auth = firebase.auth();
+var database = firebase.database();
+
+var errorMsg = $("errorMessage")
+
+//sign up
+$("#signUp").on("click", function () {
+    var email = $("#email-input").val().trim();
+    var password = $("#password-input").val().trim();
+    
+    //Add to database with database.ref()
+    auth.createUserWithEmailAndPassword(email, password)
+    .then(function(user) {
+        database.ref("/users").child(user.user.uid).update({
+            email: user.user.email,
+            
+            dateAdded: firebase.database.ServerValue.TIMESTAMP
+        })
+    }).catch(function (err) {
+        if (err.code === "auth/weak-password") errorMsg.text(err.message)
+        else if (err.code === "auth/email-already-in-use") errorMsg.text("Email already in use!")
+    })
+})
+
+$("#login").on("click", function () {
+    var email = $("#email-input").val().trim();
+    var password = $("#password-input").val().trim();
+
+    auth.signInWithEmailAndPassword(email, password)
+        .catch(function (error) {
+            var errorCode = error.code;
+
+            if (errorCode === "auth/user-not-found") errorMsg.text("###")
+            else if (errorCode === "auth-wrong-password") errorMsg.text("Invalid password.")
+            else if (errorCode === "auth/invalid-email") errorMsg.text("Invalid email.")
+
+
+        });
+})
+
+//signout button
+
+//link it to the search bar
 
 
