@@ -70,3 +70,9 @@ body {
     background-attachment: fixed;
 }
 
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0px 10px;  
+}

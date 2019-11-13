@@ -29,6 +29,7 @@ $("#add-city").on("click", function (event) {
         var city = $("#city").val().trim();
 
         createWeatherCard(city);
+        $("#city").val("");
     }
 })
 
@@ -54,7 +55,7 @@ function createWeatherCard(city) {
             "<div class='card-body'>" +
             "<div class='icon'><img src='" + iconURL + "'></div>" +
             "<div class='degrees'>" + temp + " &deg;F" + "</div>" +
-            "<h5 class='card-title city-name'>" + city + "</h5>" +
+            "<h5 class='card-title city-name ellipsis'>" + city + "</h5>" +
             "<div>" + weatherMain + ": " + weatherDescription + "</div>" +
             "</div>" +
             "</div>";
@@ -109,11 +110,11 @@ $(document).on("click", ".weather-card", function () {
     }).then(function (response) {
         for (var i = 0; i < response.businesses.length; i++) {
             var business = $("<div>").addClass("card").attr("style", "width: 18rem;")
-            var name = $("<h5>").attr("class", "name").text(response.businesses[i].name);
+            var name = $("<h5>").addClass("name ellipsis").text(response.businesses[i].name);
             var details = $("<div>")
             var phone = $("<p>").attr("class", "phone").text(response.businesses[i].phone);
             var image = $("<img>").attr("src", response.businesses[i].image_url).addClass("card-img-top restaurant-image");
-            var location = $("<p>").attr("class", "address").text(response.businesses[i].location.address1 + ", " + response.businesses[i].location.city + ", " + response.businesses[i].location.zip_code);
+            var location = $("<p>").addClass("address ellipsis").text(response.businesses[i].location.address1 + ", " + response.businesses[i].location.city + ", " + response.businesses[i].location.zip_code);
             business.append(image);
             details.append(name);
             details.append(phone);
