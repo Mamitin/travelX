@@ -78,7 +78,7 @@ $(document).on("click", ".weather-card", function () {
 
 
     $.ajax({
-        "url": "https://api.yelp.com/v3/businesses/search?term=restaurants&location=" + city + "&limit=3",
+        "url": "https://api.yelp.com/v3/businesses/search?term=restaurants&location=" + city + "&limit=6",
         "method": "GET",
         "headers": {
             "Authorization": "Bearer jx1SEtsblr1yJ82sPA12K2KeN8DJtiecuNYIv5jHFIqbt0etlByOQwWjc-3k80nhLKmyolJ4rfSaMcobdrepcwCjE8mQoMC6HHIkGxRoNCoh1S3-n6OUbiJSqtW1XXYx",
