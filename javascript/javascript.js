@@ -40,7 +40,8 @@ function createWeatherCard(city) {
     });
 }
 
-$(document).on("click", ".weather-card", function () {
+$(document).on("click", ".weather-card", function (event) {
+    event.preventDefault();
     var city = $(this).attr("data-city");
 
     $("#photo-container").empty();
@@ -103,6 +104,7 @@ $(document).on("click", ".weather-card", function () {
             $("#activities-container").append(url);
         }
     })
+
 });
 
 
