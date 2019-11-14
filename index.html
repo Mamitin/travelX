@@ -9,58 +9,54 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link rel="stylesheet" href="justifiedGallery.min.css">
     <link rel="stylesheet" href="css/style.css" />
-    <title>TravelX</title>
+    <title>K.L.M.S. Travel</title>
+    <link rel="shortcut icon" href="images/logo.png">
 </head>
 
 <body>
+
+    <div>
+    <div class="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/442/2395499442_a291abee-d4af-4982-a63f-5a86f6c7e1f8.png?cb=1573427590"
-            width="100" height="100" alt="logo" id="logo">
-        <ul class="nav nav-pills" id="links">
-            <li class="nav-item">
-                <a class="nav-link link" href="#weather">Weather</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link link" href="#photos">Photos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link link" href="#restaurants">Restaurants</a>
-            </li>
-        </ul>
-
-        <form class="form-inline my-2 my-lg-0 " id="search">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="city">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="add-city">Search</button>
-        </form>
-
-        <body>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Login
-            </button>
+       <a href ="https://mamitin.github.io/travelX/"> <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/442/2395499442_a291abee-d4af-4982-a63f-5a86f6c7e1f8.png?cb=1573427590"
+            width="100" height="100" alt="logo" id="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown" id="links">
+            <ul class="nav nav-pills navbar-nav ml-auto" id="links">
+                <li class="nav-item active">
+                    <a class="nav-link topic" href="#weather">Weather</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link topic" href="#photos">Photos</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link topic" href="#restaurants">Restaurants</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-    <div class="container">
-        <!-- <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link" href="#weather">Weather</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#photos">Photos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#restaurants">Restaurants</a>
-            </li>
-        </ul> -->
-        <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+</div>
+
+<div class="container">
+    <form class="form-inline my-2 my-lg-0 " id="search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="city" required>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="add-city">Search</button>
+    </form>
+
+    
+        <div data-spy="scroll" data-offset = "20" data-target="#navbar-example2" data-offset="0">
             <div id="wrapper">
                 <div id="top-container">
-                    <h4 id="weather"></h4>
+                    <h4  id="weather"></h4>
                 </div>
                 <div id="bottom-container">
-                    <h4 id="photos"></h4>
+                    <h4  id="photos"></h4>
                     <div id="photo-container"></div>
-                    <div>
-                        <h4 id="restaurants"></h4>
+                <div>
+                        <h4  id="restaurants"></h4>
                         <div id="activities-container"></div>
                     </div>
                 </div>

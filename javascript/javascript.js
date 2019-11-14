@@ -1,34 +1,11 @@
-//HTML
-// Search bar with our name KLMS Travel at the top
-// A card with the weather, city and the icon
-// Be able to click on the card 
-// After clicking on the card pictures and events will display
-
-
-
-//JS
-
-// Use firebase authenication
-// event listener for user input link to firebase 
-// Validate search bar
-// Use AJAX call for weather API in a card- look at GIPHY HW
-// on click on card 
-// AJAX call to photo API/ AJAX call for activities API
-// display images with photo display library
-
-
-
 $("#add-city").on("click", function (event) {
     event.preventDefault();
-
-    
-
-
 
     if ($("#city")[0].reportValidity()) {
         var city = $("#city").val().trim();
 
         createWeatherCard(city);
+        $("#city").val("");
     }
 })
 
@@ -50,11 +27,11 @@ function createWeatherCard(city) {
         var weatherDescription = response.weather[0].description;
         var temp = Math.round(response.main.temp);
         var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
-        var weatherCard = "<div class='card weather-card' style='width: 18rem;' data-city='" + city + "'>" +
+        var weatherCard = "<div class='card weather-card' style='width: 18rem;' data-toggle='tooltip' data-placement='top' title='Click card for more information about the city' data-city='" + city + "'>" +
             "<div class='card-body'>" +
             "<div class='icon'><img src='" + iconURL + "'></div>" +
             "<div class='degrees'>" + temp + " &deg;F" + "</div>" +
-            "<h5 class='card-title city-name'>" + city + "</h5>" +
+            "<h5 class='card-title city-name ellipsis'>" + city + "</h5>" +
             "<div>" + weatherMain + ": " + weatherDescription + "</div>" +
             "</div>" +
             "</div>";
@@ -69,10 +46,13 @@ function createWeatherCard(city) {
         };
         weatherData.push(myObject);
         
+        $('.weather-card').tooltip();
     });
 }
 
-$(document).on("click", ".weather-card", function () {
+$(document).on("click", ".weather-card", function (event) {
+    event.preventDefault();
+    $("#photo-container").scroll();
     var city = $(this).attr("data-city");
 
     $("#photo-container").empty();
@@ -110,27 +90,32 @@ $(document).on("click", ".weather-card", function () {
 
 
     $.ajax({
-        "url": "https://api.yelp.com/v3/businesses/search?term=restaurants&location=" + city + "&limit=3",
+        "url": "https://api.yelp.com/v3/businesses/search?term=restaurants&location=" + city + "&limit=6",
         "method": "GET",
         "headers": {
             "Authorization": "Bearer jx1SEtsblr1yJ82sPA12K2KeN8DJtiecuNYIv5jHFIqbt0etlByOQwWjc-3k80nhLKmyolJ4rfSaMcobdrepcwCjE8mQoMC6HHIkGxRoNCoh1S3-n6OUbiJSqtW1XXYx",
         }
     }).then(function (response) {
         for (var i = 0; i < response.businesses.length; i++) {
-            var business = $("<div>").addClass("card").attr("style", "width: 18rem;")
-            var name = $("<h5>").attr("class", "name").text(response.businesses[i].name);
+            var url = $("<a>").attr("href", response.businesses[i].url).attr("target", "_blank").addClass("restaurant-link");
+            var business = $("<div>").addClass("card").attr("style", "width: 18rem;");
+            var name = $("<h5>").addClass("name ellipsis").text(response.businesses[i].name);
             var details = $("<div>")
             var phone = $("<p>").attr("class", "phone").text(response.businesses[i].phone);
             var image = $("<img>").attr("src", response.businesses[i].image_url).addClass("card-img-top restaurant-image");
-            var location = $("<p>").attr("class", "address").text(response.businesses[i].location.address1 + ", " + response.businesses[i].location.city + ", " + response.businesses[i].location.zip_code);
+            var location = $("<p>").addClass("address ellipsis").text(response.businesses[i].location.address1 + ", " + response.businesses[i].location.city + ", " + response.businesses[i].location.zip_code);
             business.append(image);
             details.append(name);
             details.append(phone);
             details.append(location);
             business.append(details);
-            $("#activities-container").append(business);
+
+            url.append(business);
+
+            $("#activities-container").append(url);
         }
     })
+
 });
 
 

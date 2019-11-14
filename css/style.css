@@ -1,46 +1,88 @@
-.navbar{
-    margin-bottom: 40px;
-    
+body {
+    background: url("../images/travel_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    max-width: 100%;
 }
-ul{
-    position: absolute;
+.scroll{
+    display: block;
+    height: 115px; /*same height as header*/
+    margin-top: -115px; /*same height as header*/
+    visibility: hidden;
+  }
+.header {
+    position: fixed;
     width: 100%;
-    left: 35%;
-    text-align: center;
-    margin:0 auto;
+    z-index: 1;
+   }
+.container {
+    padding-top: 150px;
+}
+
+.navbar {
+    margin-bottom: 20px;
 }
 
 
-
-.link{
+.topic {
     font-family: 'Jomolhari', serif;
-    text-align: center;
+    text-align: right;
     color: rgb(72, 95, 72);
     font-size: 1.5em;
-    /* font-weight: bold; */
-    /* position: absolute;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    margin:0 auto; */
+    padding-right: 20px;
 }
+
+#links{
+    padding-right: 100px;
+}
+
+#search{
+    display:block;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
+#add-city{
+    background: #827996;
+    border:#827996;
+    color: #ffff;
+}
+#add-city:hover{
+    background: #998fb0;
+}
+#add-city:focus{
+    outline:none !important;
+    box-shadow: none !important;
+}
+
+#city:focus, #city:active{
+    outline:none !important;
+    box-shadow: none !important;
+    border:none;
+}
+
 .city-name {
     text-transform: capitalize;
-} 
+}
 
 .card {
     display: inline-block;
     margin: 20px;
     border-radius: 5px;
+    background: #f8f9fa;
 }
 
 #wrapper {
-    background-color:#827996a2;
+    background-color: #827996a2;
     text-align: center;
     border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 50px;
+
 }
 
 .restaurant-image {
@@ -50,23 +92,25 @@ ul{
 }
 
 
-#city-link {
-    float: left;
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0px 10px;
 }
 
-/* #nav-bar{
-    border-radius: 5px;
-} */
-
-#photo-container{
-    float: left;
+.restaurant-link:link {
+    color: #000;
 }
 
-body {
-    background: url("../images/travel_background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+.restaurant-link:visited {
+    color: #000;
 }
 
+.restaurant-link:hover {
+    color: #000;
+}
+
+.restaurant-link:active {
+    color: #000;
+}
