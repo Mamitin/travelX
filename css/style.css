@@ -12,11 +12,16 @@ body {
 }
 
 
-.link {
+.topic {
     font-family: 'Jomolhari', serif;
     text-align: right;
     color: rgb(72, 95, 72);
     font-size: 1.5em;
+    padding-right: 20px;
+}
+
+#links{
+    padding-right: 40px;
 }
 
 #search{
@@ -30,6 +35,19 @@ body {
     border:#827996;
     color: #ffff;
 }
+#add-city:hover{
+    background: #998fb0;
+}
+#add-city:focus{
+    outline:none !important;
+    box-shadow: none !important;
+}
+
+#city:focus, #city:active{
+    outline:none !important;
+    box-shadow: none !important;
+    border:none;
+}
 
 .city-name {
     text-transform: capitalize;
@@ -39,6 +57,7 @@ body {
     display: inline-block;
     margin: 20px;
     border-radius: 5px;
+    background: #f8f9fa;
 }
 
 #wrapper {
