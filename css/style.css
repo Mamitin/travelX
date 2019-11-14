@@ -6,6 +6,20 @@ body {
     background-attachment: fixed;
     max-width: 100%;
 }
+.scroll{
+    display: block;
+    height: 115px; /*same height as header*/
+    margin-top: -115px; /*same height as header*/
+    visibility: hidden;
+  }
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+   }
+.container {
+    padding-top: 150px;
+}
 
 .navbar {
     margin-bottom: 20px;
@@ -21,7 +35,7 @@ body {
 }
 
 #links{
-    padding-right: 40px;
+    padding-right: 100px;
 }
 
 #search{
@@ -29,6 +43,7 @@ body {
     text-align: center;
     padding-bottom: 20px;
 }
+
 
 #add-city{
     background: #827996;
@@ -67,6 +82,7 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 50px;
+
 }
 
 .restaurant-image {
