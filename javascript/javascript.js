@@ -42,6 +42,7 @@ function createWeatherCard(city) {
 
 $(document).on("click", ".weather-card", function (event) {
     event.preventDefault();
+    $("#photo-container").scroll();
     var city = $(this).attr("data-city");
 
     $("#photo-container").empty();
