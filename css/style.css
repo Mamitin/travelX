@@ -4,14 +4,15 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-    max-width: 100%;
 }
+
 .scroll{
     display: block;
-    height: 115px; /*same height as header*/
-    margin-top: -115px; /*same height as header*/
+    height: 100px; 
+    margin-top: -100px;
      visibility: hidden;
   }   
+
 .header {
     position: fixed;
     width: 100%;
@@ -28,8 +29,6 @@ body {
 
 .topic {
     font-family: 'Jomolhari', serif;
-    text-align: right;
-    color: rgb(72, 95, 72);
     font-size: 1.5em;
     padding-right: 20px;
 }
@@ -114,3 +113,45 @@ body {
 .restaurant-link:active {
     color: #000;
 }
+
+/* footer{
+    position: relative; 
+    display: block; 
+    bottom: 0;
+    left:0;
+    width: 100%;
+    background-color: grey;
+    text-align: center;
+    background: #f8f9fa;
+    height: 70px; 
+    clear: both;
+    margin-top: 100px;
+} */
+/* .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 40px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 100%;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  } */
