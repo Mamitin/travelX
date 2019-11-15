@@ -80,16 +80,15 @@ $(document).on("click", ".weather-card", function (event) {
     }, 800, function () {
     });
 
-
     var city = $(this).attr("data-city");
 
-    $("#photo-container").empty();
-    $("#activities-container").empty();
-
     if (!photosIsLoading && !yelpIsLoading) {
+        $("#photo-container").empty();
+        $("#activities-container").empty();
 
         photosIsLoading = true;
         yelpIsLoading = true;
+
         // Unsplash API 
         var queryUrl = "https://api.unsplash.com/search/photos?page=1&query=" + city + "&per_page=10&client_id=1fe059d9563f81ba0606c1b4cc67ce6907170487254d42e8874bf0748145d74b";
         $.ajax({
