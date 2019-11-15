@@ -1,3 +1,18 @@
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyCnj1-16_cCbBQxBMm6QEnZmGe5XpbOJ8s",
+    authDomain: "travelx-d1b19.firebaseapp.com",
+    databaseURL: "https://travelx-d1b19.firebaseio.com",
+    projectId: "travelx-d1b19",
+    storageBucket: "travelx-d1b19.appspot.com",
+    messagingSenderId: "119514909713",
+    appId: "1:119514909713:web:934ab8a71f9a7dcbbff5b0",
+    measurementId: "G-2JQ0YCVH1N"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
+
 $("#add-city").on("click", function (event) {
     event.preventDefault();
 
@@ -9,12 +24,25 @@ $("#add-city").on("click", function (event) {
     }
 })
 
-createWeatherCard("Miami");
-createWeatherCard("Paris");
-createWeatherCard("New York");
-createWeatherCard("Sydney");
-createWeatherCard("Hong Kong");
-createWeatherCard("Rio de Janeiro");
+
+
+database.ref().on("value", function (snapshot) {
+    var card1 = snapshot.val().card1;
+    var card2 = snapshot.val().card2;
+    var card3 = snapshot.val().card3;
+    var card4 = snapshot.val().card4;
+    var card5 = snapshot.val().card5;
+    var card6 = snapshot.val().card6;
+
+    createWeatherCard(card1);
+    createWeatherCard(card2);
+    createWeatherCard(card3);
+    createWeatherCard(card4);
+    createWeatherCard(card5);
+    createWeatherCard(card6);
+
+});
+
 
 function createWeatherCard(city) {
     queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=ad0f64f9a42308c19b2ba725fdc6802c";
@@ -35,19 +63,20 @@ function createWeatherCard(city) {
             "<div>" + weatherMain + ": " + weatherDescription + "</div>" +
             "</div>" +
             "</div>";
-        $("#top-container").append(weatherCard);
         $('.weather-card').tooltip();
+        $("#top-container").append(weatherCard);
+
     });
 }
 
 $(document).on("click", ".weather-card", function (event) {
     event.preventDefault();
 
-        $("html, body").animate({
-            scrollTop: $("#photos").offset().top
-        }, 800, function(){
-});
- 
+    $("html, body").animate({
+        scrollTop: $("#photos").offset().top
+    }, 800, function () {
+    });
+
 
     var city = $(this).attr("data-city");
 
@@ -113,5 +142,7 @@ $(document).on("click", ".weather-card", function (event) {
     })
 
 });
+
+
 
 
