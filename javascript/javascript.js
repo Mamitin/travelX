@@ -63,8 +63,8 @@ function createWeatherCard(city) {
             "<div>" + weatherMain + ": " + weatherDescription + "</div>" +
             "</div>" +
             "</div>";
-        $("#top-container").append(weatherCard);
         $('.weather-card').tooltip();
+        $("#top-container").append(weatherCard);
 
     });
 }
