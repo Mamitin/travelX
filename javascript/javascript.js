@@ -152,7 +152,6 @@ $("#signUp").on("click", function () {
     .then(function(user) {
         database.ref("/users").child(user.user.uid).update({
             email: user.user.email,
-            
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         })
     }).catch(function (err) {
