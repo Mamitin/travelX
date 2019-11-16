@@ -19,9 +19,9 @@ $("#add-city").on("click", function (event) {
     event.preventDefault();
 
     if ($("#city")[0].reportValidity()) {
-        var city = $("#city").val().trim();
+        var city = $("#city").val().trim().toLowerCase();
 
-        if (!cities.includes(city.toLowerCase())) {
+        if (!cities.includes(city)) {
             cities.push(city);
 
             createWeatherCard(city);
