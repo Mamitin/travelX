@@ -2,7 +2,10 @@
 <img src="images/logo.png">
 
 ## Description
-We built an app based on traveling. The user has access to dynamically generated weather cards. Also, the user can search new cities and generate a new weather card. Upon clicking on a card, the user will be scrolled down to the pictures and resturants sections where more information is displayed. Our site is a single page with three API calls.
+We built an app based on traveling.  The user has access to dynamically generated weather cards. Also, the user can generate new cards by searching a new city .  Upon clicking on a card, the user will be scrolled down to the picture and restaurant sections. Where more information is displayed.  Our site is a single page website with three API calls.
+
+## Inspiration:
+Our inspiration for this app was that we all love to travel. We created this travel site for one stop information about cities around the world.
 
 ## See it in action:
 <img src="images/KLMS.gif">
