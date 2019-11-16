@@ -2,7 +2,7 @@
 <img src="images/logo.png">
 
 ## Description
-We built an app based on traveling. The user has access to generate and generated weather cards. Upon clicking on a card, the user will be scrolled down to the pictures and resturants section. The user is also able to search for a new city in the search bar, by following the above steps. Out site is single page.
+We built an app based on traveling. The user has access to dynamically generated weather cards. Also, the user can search new cities and generate a new weather card. Upon clicking on a card, the user will be scrolled down to the pictures and resturants sections where more information is displayed. Our site is a single page with three API calls.
 
 ## See it in action:
 <img src="images/KLMS.gif">
@@ -39,9 +39,10 @@ We built an app based on traveling. The user has access to generate and generate
  <img src="images/YelpAPI.PNG">
 
 ## Library code snippet:
+<img src="images/Library.PNG">
 
 ## Firebase code snippet:
-
+<img src="images/firbase.png.png">
 
 
 ## Contributors
