@@ -44,6 +44,8 @@ We built an app based on traveling. The user has access to dynamically generated
 ## Firebase code snippet:
 <img src="images/firbase.png.png">
 
+## Google slide presenation:
+[Presentation](https://docs.google.com/presentation/d/1X00BFgLWP8oNZHDX7TZpkZbXEHf6Cxly7AgH4p5d8GM/edit?usp=sharing)
 
 ## Contributors
  - Links to our Githubs
