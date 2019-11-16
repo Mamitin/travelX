@@ -120,7 +120,6 @@ $(document).on("click", ".weather-card", function (event) {
             }
         });
 
-
         $.ajax({
             "url": "https://api.yelp.com/v3/businesses/search?term=restaurants&location=" + city + "&limit=6",
             "method": "GET",
