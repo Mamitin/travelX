@@ -39,14 +39,14 @@ We built an app based on traveling. The user has access to dynamically generated
  <img src="images/YelpAPI.PNG">
 
 ## Library code snippet:
-<img src="images/Library.PNG">
+<img src="images/Library.png">
 
 ## Firebase code snippet:
 <img src="images/firbase.png.png">
 
 
 ## Contributors
- - Links to our githubs
+ - Links to our Githubs
     - [Leticia](https://github.com/leticiaroncero)
     - [Monica](https://github.com/Mamitin)
     - [Katia](https://github.com/katrinity)
