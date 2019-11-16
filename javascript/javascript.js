@@ -13,34 +13,30 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
+var cities = [];
+
 $("#add-city").on("click", function (event) {
     event.preventDefault();
 
     if ($("#city")[0].reportValidity()) {
         var city = $("#city").val().trim();
 
-        createWeatherCard(city);
+        if (!cities.includes(city.toLowerCase())) {
+            cities.push(city);
+
+            createWeatherCard(city);
+        }
         $("#city").val("");
     }
 })
 
 
+database.ref().on("child_added", function (snapshot) {
+    var city = snapshot.val();
 
-database.ref().on("value", function (snapshot) {
-    var card1 = snapshot.val().card1;
-    var card2 = snapshot.val().card2;
-    var card3 = snapshot.val().card3;
-    var card4 = snapshot.val().card4;
-    var card5 = snapshot.val().card5;
-    var card6 = snapshot.val().card6;
+    cities.push(city.toLowerCase());
 
-    createWeatherCard(card1);
-    createWeatherCard(card2);
-    createWeatherCard(card3);
-    createWeatherCard(card4);
-    createWeatherCard(card5);
-    createWeatherCard(card6);
-
+    createWeatherCard(city);
 });
 
 
